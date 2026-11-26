@@ -21,9 +21,8 @@ class ClientCertPrompt {
     dartOut: 'lib/platform/network_api.g.dart',
     swiftOut: 'ios/Runner/Core/Network.g.swift',
     swiftOptions: SwiftOptions(includeErrorClass: false),
-    kotlinOut:
-        'android/app/src/main/kotlin/app/alextran/immich/core/Network.g.kt',
-    kotlinOptions: KotlinOptions(package: 'app.alextran.immich.core', includeErrorClass: true),
+    kotlinOut: 'android/app/src/main/kotlin/app/alextran/immich/core/Network.g.kt',
+    kotlinOptions: KotlinOptions(package: 'com.tanitweb.orangecloudsync.core', includeErrorClass: true),
     dartOptions: DartOptions(),
     dartPackageName: 'immich_mobile',
   ),

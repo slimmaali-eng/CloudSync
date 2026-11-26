@@ -1,4 +1,4 @@
-package app.alextran.immich.background
+package com.tanitweb.orangecloudsync.background
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -13,8 +13,8 @@ import androidx.core.app.NotificationCompat
 import androidx.work.ForegroundInfo
 import androidx.work.ListenableWorker
 import androidx.work.WorkerParameters
-import app.alextran.immich.MainActivity
-import app.alextran.immich.R
+import com.tanitweb.orangecloudsync.MainActivity
+import com.tanitweb.orangecloudsync.R
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture

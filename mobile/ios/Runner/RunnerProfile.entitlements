@@ -13,7 +13,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>$(CUSTOM_GROUP_ID)</string>
+		<string>group.com.tanitweb.orangecloudsync</string>
 	</array>
 </dict>
 </plist>

@@ -1,4 +1,4 @@
-package app.alextran.immich.permission
+package com.tanitweb.orangecloudsync.permission
 
 import android.content.Context
 import android.content.Intent

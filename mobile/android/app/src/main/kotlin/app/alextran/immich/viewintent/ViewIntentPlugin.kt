@@ -1,4 +1,4 @@
-package app.alextran.immich.viewintent
+package com.tanitweb.orangecloudsync.viewintent
 
 import android.app.Activity
 import android.content.Context

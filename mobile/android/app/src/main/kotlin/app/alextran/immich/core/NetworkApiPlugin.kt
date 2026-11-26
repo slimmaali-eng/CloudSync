@@ -1,10 +1,10 @@
-package app.alextran.immich.core
+package com.tanitweb.orangecloudsync.core
 
 import android.app.Activity
 import android.content.Context
 import android.os.OperationCanceledException
 import android.security.KeyChain
-import app.alextran.immich.NativeBuffer
+import com.tanitweb.orangecloudsync.NativeBuffer
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding

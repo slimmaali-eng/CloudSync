@@ -1,4 +1,4 @@
-package app.alextran.immich.sync
+package com.tanitweb.orangecloudsync.sync
 
 import android.app.Activity
 import android.content.ContentResolver

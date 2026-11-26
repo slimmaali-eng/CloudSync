@@ -1,4 +1,4 @@
-package app.alextran.immich.core
+package com.tanitweb.orangecloudsync.core
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -10,8 +10,8 @@ import androidx.media3.datasource.DataSource
 import androidx.media3.datasource.ResolvingDataSource
 import androidx.media3.datasource.cronet.CronetDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
-import app.alextran.immich.BuildConfig
-import app.alextran.immich.NativeBuffer
+import com.tanitweb.orangecloudsync.BuildConfig
+import com.tanitweb.orangecloudsync.NativeBuffer
 import okhttp3.Cache
 import okhttp3.ConnectionPool
 import okhttp3.Cookie

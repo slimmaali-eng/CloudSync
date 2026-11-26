@@ -1,4 +1,4 @@
-package app.alextran.immich.widget
+package com.tanitweb.orangecloudsync.widget
 
 import android.content.Context
 import android.content.Intent
@@ -17,8 +17,8 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import app.alextran.immich.R
-import app.alextran.immich.widget.model.*
+import com.tanitweb.orangecloudsync.R
+import com.tanitweb.orangecloudsync.widget.model.*
 import java.io.File
 
 class PhotoWidget : GlanceAppWidget() {

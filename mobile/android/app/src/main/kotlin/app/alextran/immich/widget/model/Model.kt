@@ -1,4 +1,4 @@
-package app.alextran.immich.widget.model
+package com.tanitweb.orangecloudsync.widget.model
 
 import android.graphics.Bitmap
 import androidx.datastore.preferences.core.*

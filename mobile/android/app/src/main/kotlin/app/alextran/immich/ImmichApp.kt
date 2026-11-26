@@ -1,10 +1,10 @@
-package app.alextran.immich
+package com.tanitweb.orangecloudsync
 
 import android.app.Application
 import android.os.Handler
 import android.os.Looper
-import app.alextran.immich.background.BackgroundEngineLock
-import app.alextran.immich.background.BackgroundWorkerApiImpl
+import com.tanitweb.orangecloudsync.background.BackgroundEngineLock
+import com.tanitweb.orangecloudsync.background.BackgroundWorkerApiImpl
 
 class ImmichApp : Application() {
   override fun onCreate() {

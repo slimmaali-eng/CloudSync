@@ -71,3 +71,6 @@ lib/generated/
 
 # Flutter widget previews cache
 .widget_preview/
+
+# FVM Version Cache
+.fvm/

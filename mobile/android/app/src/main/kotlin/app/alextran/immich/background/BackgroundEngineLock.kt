@@ -1,8 +1,8 @@
-package app.alextran.immich.background
+package com.tanitweb.orangecloudsync.background
 
 import android.content.Context
 import android.util.Log
-import app.alextran.immich.core.ImmichPlugin
+import com.tanitweb.orangecloudsync.core.ImmichPlugin
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import java.util.concurrent.atomic.AtomicInteger
 

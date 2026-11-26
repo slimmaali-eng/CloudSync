@@ -1,4 +1,4 @@
-package app.alextran.immich.widget
+package com.tanitweb.orangecloudsync.widget
 
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
@@ -6,7 +6,7 @@ import android.content.Context
 import android.content.Intent
 import es.antonborri.home_widget.HomeWidgetPlugin
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
-import app.alextran.immich.widget.model.*
+import com.tanitweb.orangecloudsync.widget.model.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

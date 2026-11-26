@@ -6,7 +6,7 @@ import 'package:pigeon/pigeon.dart';
     swiftOut: 'ios/Runner/Core/Passkey.g.swift',
     swiftOptions: SwiftOptions(includeErrorClass: false),
     kotlinOut: 'android/app/src/main/kotlin/app/alextran/immich/passkey/Passkey.g.kt',
-    kotlinOptions: KotlinOptions(package: 'app.alextran.immich.passkey'),
+    kotlinOptions: KotlinOptions(package: 'com.tanitweb.orangecloudsync.passkey'),
     dartOptions: DartOptions(),
     dartPackageName: 'immich_mobile',
   ),

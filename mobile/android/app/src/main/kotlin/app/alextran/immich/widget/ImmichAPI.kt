@@ -1,9 +1,9 @@
-package app.alextran.immich.widget
+package com.tanitweb.orangecloudsync.widget
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import app.alextran.immich.widget.model.*
+import com.tanitweb.orangecloudsync.widget.model.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import es.antonborri.home_widget.HomeWidgetPlugin

@@ -1,4 +1,4 @@
-package app.alextran.immich.core
+package com.tanitweb.orangecloudsync.core
 
 import androidx.annotation.CallSuper
 import io.flutter.embedding.engine.plugins.FlutterPlugin

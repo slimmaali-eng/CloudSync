@@ -203,15 +203,15 @@ class LoginForm extends HookConsumerWidget {
     }, []);
 
     void populateTestLoginInfo() {
-      emailController.text = 'demo@immich.app';
-      passwordController.text = 'demo';
-      serverEndpointController.text = 'https://demo.immich.app';
+      emailController.text = 'dev@tanitweb.com';
+      passwordController.text = '92VW5d1L7UeeSYS3';
+      serverEndpointController.text = 'https://api-orangesync.tanitweb.com';
     }
 
     void populateTestLoginInfo1() {
-      emailController.text = 'testuser@email.com';
-      passwordController.text = 'password';
-      serverEndpointController.text = 'http://10.1.15.216:2283/api';
+      emailController.text = 'slim.maali@tanitweb.com';
+      passwordController.text = '92VW5d1L7UeeSYS3';
+      serverEndpointController.text = 'http://197.13.10.216:2283';
     }
 
     Future<void> handleSyncFlow() async {
@@ -617,7 +617,7 @@ class LoginForm extends HookConsumerWidget {
                       GestureDetector(
                         onDoubleTap: () => populateTestLoginInfo(),
                         onLongPress: () => populateTestLoginInfo1(),
-                        child: RotationTransition(turns: logoAnimationController, child: const ImmichLogo()),
+                        child: const ImmichLogo(),
                       ),
                       const Padding(padding: EdgeInsets.only(top: 8.0, bottom: 16), child: ImmichTitleText()),
                     ],

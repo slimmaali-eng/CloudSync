@@ -1,4 +1,4 @@
-package app.alextran.immich.images
+package com.tanitweb.orangecloudsync.images
 
 import android.content.Context
 import android.graphics.ImageDecoder
@@ -7,11 +7,11 @@ import android.os.CancellationSignal
 import android.os.OperationCanceledException
 import android.util.Size
 import androidx.exifinterface.media.ExifInterface
-import app.alextran.immich.INITIAL_BUFFER_SIZE
-import app.alextran.immich.NativeBuffer
-import app.alextran.immich.NativeByteBuffer
-import app.alextran.immich.NativeImage
-import app.alextran.immich.core.HttpClientManager
+import com.tanitweb.orangecloudsync.INITIAL_BUFFER_SIZE
+import com.tanitweb.orangecloudsync.NativeBuffer
+import com.tanitweb.orangecloudsync.NativeByteBuffer
+import com.tanitweb.orangecloudsync.NativeImage
+import com.tanitweb.orangecloudsync.core.HttpClientManager
 import kotlinx.coroutines.*
 import okhttp3.Cache
 import okhttp3.Call

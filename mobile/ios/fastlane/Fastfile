@@ -19,7 +19,7 @@ platform :ios do
   # Constants
   TEAM_ID = "2W7AC6T8T5"
   CODE_SIGN_IDENTITY = "Apple Distribution: FUTO Holdings, Inc. (#{TEAM_ID})"
-  BASE_BUNDLE_ID = "app.alextran.immich"
+  BASE_BUNDLE_ID = "com.tanitweb.orangecloudsync"
   DEV_BUNDLE_ID  = "tech.futo.immich.testflight"
   DEV_GROUP_ID   = "group.app.immich.share.testflight"
 
@@ -40,7 +40,7 @@ platform :ios do
     sh("mise trust ../../../mise.toml")
     sh("mise trust ../../mise.toml")
   end
-  
+
   # Helper method to assemble xcargs with optional CUSTOM_GROUP_ID override
   def build_xcargs(group_id: nil)
     args = "-skipMacroValidation CODE_SIGN_IDENTITY='#{CODE_SIGN_IDENTITY}' CODE_SIGN_STYLE=Manual"
@@ -51,14 +51,14 @@ platform :ios do
   # Helper method to get version from pubspec.yaml
 def get_version_from_pubspec
   require 'yaml'
-  
+
   pubspec_path = File.join(Dir.pwd, "../..", "pubspec.yaml")
   pubspec = YAML.load_file(pubspec_path)
-  
+
   version_string = pubspec['version']
   version_string ? version_string.split('+').first.split('-').first : nil
 end
-  
+
   # Helper method to configure code signing for all targets
   def configure_code_signing(base_bundle_id:, profile_name_main:, profile_name_share:, profile_name_widget:)
     # Runner (main app)
@@ -143,7 +143,7 @@ end
         signingCertificate: CODE_SIGN_IDENTITY
       }
     )
-    
+
     # Upload to TestFlight
     upload_to_testflight(
       api_key: api_key,
@@ -151,7 +151,7 @@ end
       distribute_external: distribute_external
     )
   end
-  
+
   desc "iOS Development Build to TestFlight (requires separate bundle ID)"
   lane :gha_testflight_dev do
     api_key = get_api_key
@@ -192,19 +192,19 @@ end
   desc "iOS Release to TestFlight"
   lane :gha_release_prod do
     api_key = get_api_key
-    
+
     # Download and install provisioning profiles from App Store Connect
     # Certificate is imported by GHA workflow into build.keychain
     sigh(api_key: api_key, app_identifier: BASE_BUNDLE_ID, force: true)
     main_profile_name = lane_context[SharedValues::SIGH_NAME]
-    
+
     sigh(api_key: api_key, app_identifier: "#{BASE_BUNDLE_ID}.ShareExtension", force: true)
     share_profile_name = lane_context[SharedValues::SIGH_NAME]
-    
+
     sigh(api_key: api_key, app_identifier: "#{BASE_BUNDLE_ID}.Widget", force: true)
     widget_profile_name = lane_context[SharedValues::SIGH_NAME]
-    
-    
+
+
     # Configure code signing for production bundle IDs
     configure_code_signing(
       base_bundle_id: BASE_BUNDLE_ID,
@@ -238,7 +238,7 @@ end
     increment_build_number(
       build_number: latest_testflight_build_number + 1,
     )
-    
+
     # Build archive with automatic signing
     gym(
       scheme: "Runner",
@@ -255,7 +255,7 @@ end
         compileBitcode: false
       }
     )
-    
+
     upload_to_testflight(
       skip_waiting_for_build_processing: true
     )

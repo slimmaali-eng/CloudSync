@@ -1,4 +1,4 @@
-package app.alextran.immich.sync
+package com.tanitweb.orangecloudsync.sync
 
 import android.annotation.SuppressLint
 import android.content.ContentUris
@@ -11,7 +11,7 @@ import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
 import androidx.core.database.getStringOrNull
-import app.alextran.immich.core.ImmichPlugin
+import com.tanitweb.orangecloudsync.core.ImmichPlugin
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.ImageHeaderParser
 import com.bumptech.glide.load.ImageHeaderParserUtils

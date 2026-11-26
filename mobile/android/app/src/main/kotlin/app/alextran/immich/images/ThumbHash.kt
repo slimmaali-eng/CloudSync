@@ -1,4 +1,4 @@
-package app.alextran.immich.images
+package com.tanitweb.orangecloudsync.images
 
 object ThumbHash {
   init {

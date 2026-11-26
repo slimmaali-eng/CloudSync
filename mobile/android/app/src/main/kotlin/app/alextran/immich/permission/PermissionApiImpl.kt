@@ -1,8 +1,8 @@
-package app.alextran.immich.permission
+package com.tanitweb.orangecloudsync.permission
 
 import android.content.Context
 import android.os.PowerManager
-import app.alextran.immich.core.ImmichPlugin
+import com.tanitweb.orangecloudsync.core.ImmichPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 

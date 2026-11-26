@@ -15,11 +15,11 @@ IMMICH_TEAM_ID = 2W7AC6T8T5
 
 // Root bundle identifier for the Release configuration.
 // Extension suffixes (`.ShareExtension`/`.Widget`) will be appended
-IMMICH_BUNDLE_ID_PROD = app.alextran.immich
+IMMICH_BUNDLE_ID_PROD = com.tanitweb.orangecloudsync
 
 // Root bundle identifier for the Debug and Profile configurations.
 // Build scheme suffixes (`.debug`/`.profile`) will be appended
-IMMICH_BUNDLE_ID_DEV = app.futo.immich
+IMMICH_BUNDLE_ID_DEV = com.tanitweb.orangecloudsync
 
 // Root App Group identifier.
 // Build scheme suffixes (`.debug`/`.profile`) will be appended

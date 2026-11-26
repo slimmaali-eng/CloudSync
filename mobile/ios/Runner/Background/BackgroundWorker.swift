@@ -5,27 +5,27 @@ enum BackgroundTaskType { case refresh, processing }
 
 /*
  * DEBUG: Testing Background Tasks in Xcode
- * 
+ *
  * To test background task functionality during development:
  * 1. Pause the application in Xcode debugger
  * 2. In the debugger console, enter one of the following commands:
- 
+
  ## For background refresh (short-running sync):
- 
- e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"app.alextran.immich.background.refreshUpload"]
- 
+
+ e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"com.tanitweb.orangecloudsync.background.refreshUpload"]
+
  ## For background processing (long-running upload):
- 
- e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"app.alextran.immich.background.processingUpload"]
+
+ e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"com.tanitweb.orangecloudsync.background.processingUpload"]
 
  * To simulate task expiration (useful for testing expiration handlers):
- 
- e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"app.alextran.immich.background.refreshUpload"]
- 
- e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"app.alextran.immich.background.processingUpload"]
- 
+
+ e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"com.tanitweb.orangecloudsync.background.refreshUpload"]
+
+ e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"com.tanitweb.orangecloudsync.background.processingUpload"]
+
  * 3. Resume the application to see the background code execute
- * 
+ *
  * NOTE: This must be tested on a physical device, not in the simulator.
  * In testing, only the background processing task can be reliably simulated.
  * These commands submit the respective task to BGTaskScheduler for immediate processing.
@@ -43,19 +43,19 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
   private let maxSeconds: Int?
   /// Callback function to invoke when the background task completes
   private let completionHandler: (_ success: Bool) -> Void
-  
+
   /// The Flutter engine created specifically for background execution.
   /// This is a separate instance from the main Flutter engine that handles the UI.
   /// It operates in its own isolate and doesn't share memory with the main engine.
   /// Must be properly started, registered, and torn down during background execution.
   private let engine = FlutterEngine(name: "BackgroundImmich")
-  
+
   /// Used to call methods on the flutter side
   private var flutterApi: BackgroundWorkerFlutterApi?
-  
+
   /// Flag to track whether the background task has completed to prevent duplicate completions
   private var isComplete = false
-  
+
   /**
    * Initializes a new background worker with the specified task type and execution constraints.
    * Creates a new Flutter engine instance for background execution and sets up the necessary
@@ -73,7 +73,7 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
     // Should be initialized only after the engine starts running
     self.flutterApi = nil
   }
-  
+
   /**
    * Starts the background Flutter engine and begins execution of the background task.
    * Retrieves the callback handle from UserDefaults, looks up the Flutter callback,
@@ -85,20 +85,20 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
       withEntrypoint: "backgroundSyncNativeEntrypoint",
       libraryURI: "package:immich_mobile/domain/services/background_worker.service.dart"
     )
-    
+
     // Verify that the Flutter engine started successfully
     if !isRunning {
       complete(success: false)
       return
     }
-    
+
     // Register plugins in the new engine
     GeneratedPluginRegistrant.register(with: engine)
     // Register custom plugins
     AppDelegate.registerPlugins(with: engine, messenger: engine.binaryMessenger)
     flutterApi = BackgroundWorkerFlutterApi(binaryMessenger: engine.binaryMessenger)
     BackgroundWorkerBgHostApiSetup.setUp(binaryMessenger: engine.binaryMessenger, api: self)
-    
+
     // Set up a timeout timer if maxSeconds was specified to prevent runaway background tasks
     if maxSeconds != nil {
         // Schedule a timer to cancel the task after the specified timeout period
@@ -107,7 +107,7 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
         }
     }
   }
-  
+
   /**
    * Called by the Flutter side when it has finished initialization and is ready to receive commands.
    * Routes the appropriate task type (refresh or processing) to the corresponding Flutter method.
@@ -118,7 +118,7 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
       self.handleHostResult(result: result)
     })
   }
-  
+
   /**
    * Cancels the currently running background task, either due to timeout or external request.
    * Only tears down the engine after Dart confirms it's drained. If Dart overruns iOS's grace window,
@@ -134,7 +134,7 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
     }
   }
 
-  
+
   /**
    * Handles the result from Flutter API calls and determines the success/failure status.
    * Converts Flutter's Result type to a simple boolean success indicator for task completion.
@@ -160,7 +160,7 @@ class BackgroundWorker: BackgroundWorkerBgHostApi {
     if(isComplete) {
       return
     }
-    
+
     isComplete = true
     AppDelegate.cancelPlugins(with: engine)
     engine.destroyContext()

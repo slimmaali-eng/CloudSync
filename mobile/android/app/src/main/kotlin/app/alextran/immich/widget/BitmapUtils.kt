@@ -1,4 +1,4 @@
-package app.alextran.immich.widget
+package com.tanitweb.orangecloudsync.widget
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

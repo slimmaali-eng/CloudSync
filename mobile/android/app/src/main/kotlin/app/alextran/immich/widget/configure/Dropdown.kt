@@ -1,4 +1,4 @@
-package app.alextran.immich.widget.configure
+package com.tanitweb.orangecloudsync.widget.configure
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

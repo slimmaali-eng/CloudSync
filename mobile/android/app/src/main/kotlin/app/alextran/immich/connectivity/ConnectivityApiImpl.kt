@@ -1,4 +1,4 @@
-package app.alextran.immich.connectivity
+package com.tanitweb.orangecloudsync.connectivity
 
 import android.content.Context
 import android.net.ConnectivityManager

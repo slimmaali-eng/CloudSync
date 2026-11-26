@@ -1,4 +1,4 @@
-package app.alextran.immich
+package com.tanitweb.orangecloudsync
 
 import android.graphics.Bitmap
 import java.nio.ByteBuffer

@@ -1,4 +1,4 @@
-package app.alextran.immich.background
+package com.tanitweb.orangecloudsync.background
 
 import android.content.Context
 import android.provider.MediaStore

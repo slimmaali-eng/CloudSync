@@ -1,4 +1,4 @@
-package app.alextran.immich.passkey
+package com.tanitweb.orangecloudsync.passkey
 
 import android.app.Activity
 import android.content.Context
@@ -16,7 +16,7 @@ import androidx.credentials.exceptions.GetCredentialCancellationException
 import androidx.credentials.exceptions.domerrors.NotAllowedError
 import androidx.credentials.exceptions.publickeycredential.CreatePublicKeyCredentialDomException
 import androidx.credentials.exceptions.publickeycredential.GetPublicKeyCredentialDomException
-import app.alextran.immich.BuildConfig
+import com.tanitweb.orangecloudsync.BuildConfig
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding

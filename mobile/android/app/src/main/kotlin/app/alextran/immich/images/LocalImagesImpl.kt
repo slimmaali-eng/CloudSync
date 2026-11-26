@@ -1,4 +1,4 @@
-package app.alextran.immich.images
+package com.tanitweb.orangecloudsync.images
 
 import android.content.ContentResolver
 import android.content.ContentUris
@@ -13,8 +13,8 @@ import android.provider.MediaStore.Video
 import android.util.Size
 import androidx.annotation.RequiresApi
 import androidx.exifinterface.media.ExifInterface
-import app.alextran.immich.NativeBuffer
-import app.alextran.immich.NativeImage
+import com.tanitweb.orangecloudsync.NativeBuffer
+import com.tanitweb.orangecloudsync.NativeImage
 import kotlin.math.*
 import java.io.IOException
 import java.util.concurrent.Executors

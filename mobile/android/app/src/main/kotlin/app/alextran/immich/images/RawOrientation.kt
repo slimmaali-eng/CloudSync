@@ -1,8 +1,8 @@
-package app.alextran.immich.images
+package com.tanitweb.orangecloudsync.images
 
 import android.graphics.Bitmap
 import androidx.exifinterface.media.ExifInterface
-import app.alextran.immich.NativeImage
+import com.tanitweb.orangecloudsync.NativeImage
 import java.io.IOException
 import java.io.InputStream
 import java.nio.ByteBuffer
